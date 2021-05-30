@@ -4,7 +4,7 @@ name: Hello Mundo
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  
   push:
     branches: [ main ]
   pull_request:
@@ -24,6 +24,7 @@ jobs:
   job2:
     name: Segundo Job
     runs-on: windows-latest
+    needs: job1
     steps:
       - name: Passo 1
         run: "Get-ChildItem Env: | Sort-Object Name"
